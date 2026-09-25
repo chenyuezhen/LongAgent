@@ -203,8 +203,12 @@ final class OpenAiCompatibleAdapter implements DirectProviderAdapter {
               if (profile.isOpenRouter)
                 'image_generation': advertisedImageGeneration,
               if (architecture is Map) 'architecture': architecture,
-              if (map?['context_length'] != null)
-                'context_length': map!['context_length'],
+              // vLLM advertises the window as `max_model_len` instead of
+              // `context_length`; accept either so the real window is used
+              // rather than falling back to the conservative default.
+              if ((map?['context_length'] ?? map?['max_model_len']) != null)
+                'context_length':
+                    map!['context_length'] ?? map!['max_model_len'],
               if (map?['supported_parameters'] != null)
                 'supported_parameters': map!['supported_parameters'],
               if (reasoning != null)
