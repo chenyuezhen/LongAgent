@@ -4,7 +4,7 @@
 	<dict>
 		<key>BGTaskSchedulerPermittedIdentifiers</key>
 		<array>
-			<string>app.cogwheel.conduit.refresh</string>
+			<string>com.yuezhenchen.conduit.refresh</string>
 		</array>
 		<key>CFBundleDevelopmentRegion</key>
 		<string>$(DEVELOPMENT_LANGUAGE)</string>
@@ -47,7 +47,7 @@
 				<key>CFBundleTypeRole</key>
 				<string>Editor</string>
 				<key>CFBundleURLName</key>
-				<string>app.cogwheel.conduit.share</string>
+				<string>com.yuezhenchen.conduit.share</string>
 				<key>CFBundleURLSchemes</key>
 				<array>
 					<string>SharingMedia-$(PRODUCT_BUNDLE_IDENTIFIER)</string>
@@ -57,7 +57,7 @@
 				<key>CFBundleTypeRole</key>
 				<string>Editor</string>
 				<key>CFBundleURLName</key>
-				<string>app.cogwheel.conduit.widget</string>
+				<string>com.yuezhenchen.conduit.widget</string>
 				<key>CFBundleURLSchemes</key>
 				<array>
 					<string>$(APP_URL_SCHEME)</string>
