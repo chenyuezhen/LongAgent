@@ -1,3 +1,20 @@
+<!--
+  LongAgent is a fork of Conduit. Conduit is Copyright (C) 2026 Tunap Paul
+  <https://conduit.mobile/> and licensed under the GNU GPL v3.0. This fork
+  keeps that license and is distributed under the same terms.
+-->
+
+> **LongAgent** — a modified fork of [Conduit](https://github.com/cogwheel0/conduit)
+> by Tunap Paul. This fork adds personal-team iOS signing configuration, a
+> rebranded product name, and support for reading vLLM's `max_model_len`
+> context window field.
+>
+> Conduit is licensed under the [GNU GPL v3.0](LICENSE). This fork stays under
+> that license: if you redistribute it, you must also make the corresponding
+> source available under GPL-3.0 and keep the original copyright notices.
+> The original project and its documentation are at
+> <https://github.com/cogwheel0/conduit>.
+
 <h1 align="center">Conduit</h1>
 
 <p align="center">
