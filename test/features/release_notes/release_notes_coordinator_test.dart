@@ -344,7 +344,7 @@ void main() {
     expect(find.text('English notes loaded too late.'), findsNothing);
   });
 
-  testWidgets('authenticated iOS banner opens the donation link sheet', (
+  testWidgets('authenticated iOS banner opens the release notes sheet', (
     tester,
   ) async {
     SharedPreferences.setMockInitialValues({
@@ -364,15 +364,13 @@ void main() {
 
     expect(find.text("What's new in 3.3"), findsOneWidget);
     expect(find.text("What's new"), findsNothing);
-    expect(find.text('Buy Me a Coffee'), findsNothing);
 
     await tester.tap(find.byKey(releaseNotesBannerKey));
     await tester.pumpAndSettle();
 
     expect(find.text("What's new in 3.3"), findsOneWidget);
     expect(find.text("What's new"), findsOneWidget);
-    expect(find.text('Buy Me a Coffee'), findsOneWidget);
-    expect(find.text('GitHub Sponsors'), findsNothing);
+    expect(find.text('Review LongAgent'), findsOneWidget);
 
     await tester.pumpAndSettle();
     await tester.tap(find.text('Done'));

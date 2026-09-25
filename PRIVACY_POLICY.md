@@ -1,8 +1,8 @@
-# Conduit Privacy Policy
+# LongAgent Privacy Policy
 
 Effective date: 2026-08-21
 
-Conduit is an open‑source mobile client for Open‑WebUI and directly connected AI providers. This app acts as a client to services you choose and configure. This policy describes how the app itself handles data on your device. Open WebUI servers and AI providers may collect, process, and store data under their own policies; please review their privacy terms separately.
+LongAgent is an open‑source mobile client for Open‑WebUI and directly connected AI providers. This app acts as a client to services you choose and configure. This policy describes how the app itself handles data on your device. Open WebUI servers and AI providers may collect, process, and store data under their own policies; please review their privacy terms separately.
 
 ## Information We Collect
 - Device-stored data: minimal settings and preferences (e.g., theme, UI options) saved locally on your device.
@@ -19,11 +19,11 @@ Conduit is an open‑source mobile client for Open‑WebUI and directly connecte
 - Local storage: preferences and credentials are stored on your device. Access tokens are stored using secure storage where available.
 - Network transfer: when you interact with the app, your data is sent to the Open WebUI server or direct AI provider you selected. Direct model requests are not relayed through Open WebUI or any developer‑controlled server.
 - Direct chat history: by default, a direct chat is also synchronized to your active Open WebUI server when you are signed in. You can instead keep direct chat history only on this device. Changing this setting applies to new chats and does not automatically upload existing on-device chats.
-- Apple On-Device: when you select Apple On-Device, model inference runs locally through Apple's Foundation Models framework. Prompt and response content is not sent to an AI provider by Conduit, though optional Open WebUI history synchronization remains a separate setting.
-- Apple Private Cloud Compute: when you select the Apple PCC provider, Conduit sends the conversation content and selected images needed for that request to Apple's Private Cloud Compute service. Conduit does not operate an intermediary server. If you enable on-device fallback, a PCC network failure may instead be retried with Apple's on-device model. Apple's processing and retention terms apply separately from Conduit's optional Open WebUI history synchronization.
+- Apple On-Device: when you select Apple On-Device, model inference runs locally through Apple's Foundation Models framework. Prompt and response content is not sent to an AI provider by LongAgent, though optional Open WebUI history synchronization remains a separate setting.
+- Apple Private Cloud Compute: when you select the Apple PCC provider, LongAgent sends the conversation content and selected images needed for that request to Apple's Private Cloud Compute service. LongAgent does not operate an intermediary server. If you enable on-device fallback, a PCC network failure may instead be retried with Apple's on-device model. Apple's processing and retention terms apply separately from LongAgent's optional Open WebUI history synchronization.
 
 ## Permissions
-Depending on how you use Conduit, the app may request:
+Depending on how you use LongAgent, the app may request:
 - Microphone: to capture voice input when you opt in.
 - Photos/Files: to let you pick and upload attachments.
 - Network access: to connect to your configured Open WebUI server or AI provider, including local-network services such as Ollama.
@@ -42,14 +42,14 @@ We use platform‑provided secure storage for sensitive credentials where suppor
 
 ## Data Retention
 - On device: preferences and cached media may persist until you clear app data or uninstall. You can revoke sign‑in by logging out.
-- On Open WebUI servers and AI providers: retention is determined by each service you use; consult that service’s policy. A provider may retain direct model requests independently of Conduit's optional chat-history sync.
+- On Open WebUI servers and AI providers: retention is determined by each service you use; consult that service’s policy. A provider may retain direct model requests independently of LongAgent's optional chat-history sync.
 
 ## Your Choices
 - You can change servers, remove direct connection profiles, log out, choose on-device-only history for new direct chats, or clear app data in your device settings.
 - You can choose not to grant optional permissions; some features may not work without them.
 
 ## Children’s Privacy
-Conduit is not directed to children under 13 (or the minimum age required in your jurisdiction). Do not use the app if you do not meet the applicable age requirements.
+LongAgent is not directed to children under 13 (or the minimum age required in your jurisdiction). Do not use the app if you do not meet the applicable age requirements.
 
 ## Changes to This Policy
 We may update this policy to reflect improvements or legal requirements. Material changes will be reflected in the app bundle and version notes.

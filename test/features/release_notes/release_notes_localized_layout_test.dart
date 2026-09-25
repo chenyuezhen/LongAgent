@@ -76,9 +76,6 @@ void main() {
                       currentVersion: '4.0.2',
                       notes: notes,
                       onReview: _noop,
-                      onOpenSupport: _noop,
-                      supportLabel: 'Buy Me a Coffee',
-                      supportIcon: Icons.local_cafe_outlined,
                       onClose: _noop,
                     ),
                   ),
@@ -90,7 +87,6 @@ void main() {
         await tester.pump();
 
         expect(tester.takeException(), isNull, reason: localeName);
-        expect(find.text('Buy Me a Coffee').hitTestable(), findsOneWidget);
         expect(find.byType(ConduitButton).hitTestable(), findsOneWidget);
       } finally {
         debugDefaultTargetPlatformOverride = null;

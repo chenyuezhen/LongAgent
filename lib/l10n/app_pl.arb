@@ -6278,7 +6278,7 @@
   "@releaseNotesSupportPromptHeading": {
     "description": "Heading above the combined review and donation actions in release notes."
   },
-  "releaseNotesSupportPromptMessage": "Krótka opinia pomaga większej liczbie osób znaleźć LongAgent. Niewielki datek pomaga mi w dalszym rozwoju. Każde z tych działań wiele znaczy.",
+  "releaseNotesSupportPromptMessage": "Krótka opinia pomaga większej liczbie osób znaleźć LongAgent. Zajmie Ci to chwilę, a dla mnie znaczy wiele.",
   "@releaseNotesSupportPromptMessage": {
     "description": "Combined message explaining how a review or donation supports LongAgent."
   },

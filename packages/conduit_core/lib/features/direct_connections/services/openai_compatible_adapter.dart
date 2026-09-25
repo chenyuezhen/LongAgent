@@ -208,7 +208,7 @@ final class OpenAiCompatibleAdapter implements DirectProviderAdapter {
               // rather than falling back to the conservative default.
               if ((map?['context_length'] ?? map?['max_model_len']) != null)
                 'context_length':
-                    map!['context_length'] ?? map!['max_model_len'],
+                    map?['context_length'] ?? map?['max_model_len'],
               if (map?['supported_parameters'] != null)
                 'supported_parameters': map!['supported_parameters'],
               if (reasoning != null)

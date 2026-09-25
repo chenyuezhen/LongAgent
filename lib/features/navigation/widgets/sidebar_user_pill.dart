@@ -607,20 +607,6 @@ class SidebarProfileAppBarLeading extends ConsumerWidget {
             sfSymbol: 'rectangle.portrait.and.arrow.right',
             destructive: true,
           );
-    final supportItems = <NativeSheetItemConfig>[
-      NativeSheetItemConfig(
-        id: 'buy-me-a-coffee',
-        title: l10n.buyMeACoffeeTitle,
-        sfSymbol: 'gift',
-        url: 'https://www.buymeacoffee.com/cogwheel0',
-      ),
-      NativeSheetItemConfig(
-        id: 'github-sponsors',
-        title: l10n.githubSponsorsTitle,
-        sfSymbol: 'heart',
-        url: 'https://github.com/sponsors/cogwheel0',
-      ),
-    ];
     final menuItems = <NativeSheetItemConfig>[
       ?profileMenuItem,
       ...appItems,
@@ -692,8 +678,6 @@ class SidebarProfileAppBarLeading extends ConsumerWidget {
         currentAvatarLabel: l10n.currentAvatar,
       ),
       menuItems: menuItems,
-      supportTitle: l10n.supportConduit,
-      supportItems: supportItems,
       sections: [
         if (profileMenuItem != null)
           NativeSheetSectionConfig(items: [profileMenuItem]),
@@ -701,10 +685,6 @@ class SidebarProfileAppBarLeading extends ConsumerWidget {
         NativeSheetSectionConfig(items: connectionItems),
         NativeSheetSectionConfig(items: [aboutItem]),
         if (signOutItem != null) NativeSheetSectionConfig(items: [signOutItem]),
-        NativeSheetSectionConfig(
-          title: l10n.supportConduit,
-          items: supportItems,
-        ),
       ],
       detailSheets: [
         if (user != null)

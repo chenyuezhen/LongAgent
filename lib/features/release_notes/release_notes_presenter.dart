@@ -4,11 +4,9 @@ import 'package:flutter/foundation.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../l10n/app_localizations.dart';
 import '../../shared/theme/theme_extensions.dart';
 import '../../shared/utils/external_link_launcher.dart';
 import '../../shared/widgets/themed_sheets.dart';
-import '../support/data/support_links.dart';
 import 'data/release_links.dart';
 import 'models/release_note.dart';
 import 'models/release_version.dart';
@@ -50,15 +48,6 @@ Future<void> showReleaseNotesSheet({
         );
       }
 
-      void openSupport() {
-        unawaited(
-          launchInAppBrowserLink(
-            buyMeACoffeeUrl,
-            scope: 'release-notes/support',
-          ),
-        );
-      }
-
       return ConduitAdaptiveSheetSurface(
         bottomSafeArea: defaultTargetPlatform != TargetPlatform.iOS,
         padding: const EdgeInsets.fromLTRB(
@@ -71,9 +60,6 @@ Future<void> showReleaseNotesSheet({
           currentVersion: currentVersion,
           notes: notes,
           onReview: requestReview,
-          onOpenSupport: openSupport,
-          supportLabel: AppLocalizations.of(sheetContext)!.buyMeACoffeeTitle,
-          supportIcon: Icons.local_cafe_outlined,
           onClose: closeSheet,
         ),
       );

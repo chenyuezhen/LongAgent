@@ -3099,7 +3099,7 @@
   "ollamaThinkingHigh": "High",
   "ollamaThinkingMaximum": "Maximum",
   "releaseNotesSupportPromptHeading": "喜欢 LongAgent 吗？",
-  "releaseNotesSupportPromptMessage": "一条简短的评价能帮助更多人发现 LongAgent。一点小小的打赏能支持我继续开发。无论哪一种，对我都意义重大。",
+  "releaseNotesSupportPromptMessage": "一条简短的评价能帮助更多人发现 LongAgent，只需片刻，却对我意义重大。",
   "directConnectProvider": "连接提供商",
   "directConnectProviderTitle": "连接提供商",
   "directConnectionEnabledSubtitle": "在模型选择器中显示此连接的模型。",

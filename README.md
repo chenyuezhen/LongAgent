@@ -15,12 +15,12 @@
 > The original project and its documentation are at
 > <https://github.com/cogwheel0/conduit>.
 
-<h1 align="center">Conduit</h1>
+<h1 align="center">LongAgent</h1>
 
 <p align="center">
   <img
     src="assets/icons/icon.png"
-    alt="Conduit icon"
+    alt="LongAgent icon"
     width="96"
     height="96"
   />
@@ -33,35 +33,12 @@
 <p align="center">
   <img
     alt="Latest Release"
-    src="https://img.shields.io/github/v/release/cogwheel0/conduit?display_name=tag&color=0A84FF"
-  />
-  <img
-    alt="GitHub all downloads"
-    src="https://img.shields.io/github/downloads/cogwheel0/conduit/total?style=flat-square&label=Downloads&logo=github&color=111827"
+    src="https://img.shields.io/github/v/release/chenyuezhen/LongAgent?display_name=tag&color=0A84FF"
   />
   <img
     alt="License: GPL-3.0"
     src="https://img.shields.io/badge/License-GPL%203.0-16A34A"
   />
-</p>
-
-<p align="center">
-  <a href="https://play.google.com/store/apps/details?id=app.cogwheel.conduit">
-    <img
-      src="docs/store-badges/google.webp"
-      alt="Get it on Google Play"
-      height="56"
-    />
-  </a>
-  <a
-    href="https://apps.apple.com/us/app/conduit-open-webui-client/id6749840287"
-  >
-    <img
-      src="docs/store-badges/apple.webp"
-      alt="Download on the App Store"
-      height="56"
-    />
-  </a>
 </p>
 
 <p align="center">
@@ -74,7 +51,6 @@
       align="middle"
     />
   </a>
-  &nbsp;
   <a
     href="https://trendshift.io/repositories/15397?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-15397"
     target="_blank"
@@ -223,14 +199,15 @@ that.
 
 ## Getting started
 
-Install from the [App Store](https://apps.apple.com/us/app/conduit-open-webui-client/id6749840287)
-or [Google Play](https://play.google.com/store/apps/details?id=app.cogwheel.conduit),
-then pick how you want to connect.
+This fork is not published on any app store. Build it yourself from this
+repository, or download a LongAgent build from this fork's
+[releases](https://github.com/chenyuezhen/LongAgent/releases), then pick how
+you want to connect.
 
 <details open>
 <summary><strong>Open WebUI</strong></summary>
 
-1. Launch Conduit and choose Open WebUI.
+1. Launch LongAgent and choose Open WebUI.
 2. Enter your instance's base URL.
 3. Add any required custom headers.
 4. Sign in with username and password, LDAP, JWT, SSO, or proxy auth.
@@ -336,9 +313,11 @@ enterprise/white-label build, open a discussion or reach the maintainer at
 
 ## Support
 
-If Conduit is useful to you, you can support development through
+Upstream Conduit development can be supported through
 [GitHub Sponsors](https://github.com/sponsors/cogwheel0) or
-[Buy Me a Coffee](https://www.buymeacoffee.com/cogwheel0).
+[Buy Me a Coffee](https://www.buymeacoffee.com/cogwheel0). This fork is
+maintained separately at
+[chenyuezhen/LongAgent](https://github.com/chenyuezhen/LongAgent).
 
 ## Acknowledgements
 

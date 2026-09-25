@@ -536,7 +536,7 @@ class NativeSheetHydrationService {
               id: 'github',
               title: l10n.githubRepository,
               sfSymbol: 'chevron.left.forwardslash.chevron.right',
-              url: 'https://github.com/cogwheel0/conduit',
+              url: 'https://github.com/chenyuezhen/LongAgent',
             ),
           ],
         ),

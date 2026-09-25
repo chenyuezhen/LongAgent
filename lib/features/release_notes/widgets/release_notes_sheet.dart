@@ -21,18 +21,12 @@ class ReleaseNotesSheet extends StatelessWidget {
     required this.currentVersion,
     required this.notes,
     required this.onReview,
-    required this.onOpenSupport,
-    required this.supportLabel,
-    required this.supportIcon,
     required this.onClose,
   });
 
   final String currentVersion;
   final List<ReleaseNote> notes;
   final VoidCallback onReview;
-  final VoidCallback onOpenSupport;
-  final String supportLabel;
-  final IconData supportIcon;
   final VoidCallback onClose;
 
   @override
@@ -111,10 +105,7 @@ class ReleaseNotesSheet extends StatelessWidget {
                       heading: l10n.releaseNotesSupportPromptHeading,
                       message: l10n.releaseNotesSupportPromptMessage,
                       reviewLabel: l10n.releaseNotesReviewButton,
-                      supportLabel: supportLabel,
-                      supportIcon: supportIcon,
                       onReview: onReview,
-                      onSupport: onOpenSupport,
                       compact: useCompactSupport,
                     ),
                   ),
@@ -327,20 +318,14 @@ class _ReleaseSupportSection extends StatelessWidget {
     required this.heading,
     required this.message,
     required this.reviewLabel,
-    required this.supportLabel,
-    required this.supportIcon,
     required this.onReview,
-    required this.onSupport,
     required this.compact,
   });
 
   final String heading;
   final String message;
   final String reviewLabel;
-  final String supportLabel;
-  final IconData supportIcon;
   final VoidCallback onReview;
-  final VoidCallback onSupport;
   final bool compact;
 
   @override
@@ -384,26 +369,11 @@ class _ReleaseSupportSection extends StatelessWidget {
               ),
             ],
             const SizedBox(height: Spacing.sm),
-            Row(
-              children: [
-                Expanded(
-                  child: _ReleaseActionRow(
-                    label: reviewLabel,
-                    icon: Icons.rate_review_rounded,
-                    color: theme.buttonPrimary,
-                    onPressed: onReview,
-                  ),
-                ),
-                const SizedBox(width: Spacing.sm),
-                Expanded(
-                  child: _ReleaseActionRow(
-                    label: supportLabel,
-                    icon: supportIcon,
-                    color: theme.warning,
-                    onPressed: onSupport,
-                  ),
-                ),
-              ],
+            _ReleaseActionRow(
+              label: reviewLabel,
+              icon: Icons.rate_review_rounded,
+              color: theme.buttonPrimary,
+              onPressed: onReview,
             ),
           ],
         ),

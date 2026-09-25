@@ -1991,7 +1991,7 @@ final class AppIntentBridge: AppIntentHostApi, @unchecked Sendable {
                     deadline: .now() + Self.invocationTimeout
                 ) {
                     completion.resolveInterrupted(
-                        "App Intent timed out waiting for Conduit."
+                        "App Intent timed out waiting for LongAgent."
                     )
                 }
 
@@ -2042,16 +2042,16 @@ enum AppIntentError: Error {
 
 @available(iOS 16.0, *)
 struct AskConduitIntent: AppIntent {
-    static var title: LocalizedStringResource = "Ask Conduit"
+    static var title: LocalizedStringResource = "Ask LongAgent"
     static var description = IntentDescription(
-        "Start a Conduit chat with an optional prompt."
+        "Start a LongAgent chat with an optional prompt."
     )
     static var isDiscoverable = true
     static var openAppWhenRun = true
 
     @Parameter(
         title: "Prompt",
-        requestValueDialog: IntentDialog("What should Conduit answer?")
+        requestValueDialog: IntentDialog("What should LongAgent answer?")
     )
     var prompt: String?
 
@@ -2083,7 +2083,7 @@ struct AskConduitIntent: AppIntent {
         }
 
         let message = result["error"] as? String
-            ?? appLocalized("appIntent.unableOpenChat", "Unable to open Conduit chat")
+            ?? appLocalized("appIntent.unableOpenChat", "Unable to open LongAgent chat")
         throw AppIntentError.executionFailed(message)
     }
 }
@@ -2092,7 +2092,7 @@ struct AskConduitIntent: AppIntent {
 struct StartVoiceCallIntent: AppIntent {
     static var title: LocalizedStringResource = "Start Voice Call"
     static var description = IntentDescription(
-        "Start a live voice call with Conduit."
+        "Start a live voice call with LongAgent."
     )
     static var isDiscoverable = true
     static var openAppWhenRun = true
@@ -2123,16 +2123,16 @@ struct StartVoiceCallIntent: AppIntent {
 
 @available(iOS 16.0, *)
 struct ConduitSendTextIntent: AppIntent {
-    static var title: LocalizedStringResource = "Send to Conduit"
+    static var title: LocalizedStringResource = "Send to LongAgent"
     static var description = IntentDescription(
-        "Start a Conduit chat with provided text."
+        "Start a LongAgent chat with provided text."
     )
     static var isDiscoverable = true
     static var openAppWhenRun = true
 
     @Parameter(
         title: "Text",
-        requestValueDialog: IntentDialog("What should Conduit process?")
+        requestValueDialog: IntentDialog("What should LongAgent process?")
     )
     var text: String?
 
@@ -2151,7 +2151,7 @@ struct ConduitSendTextIntent: AppIntent {
         )
 
         if let success = result["success"] as? Bool, success {
-            let value = result["value"] as? String ?? appLocalized("appIntent.sentToConduit", "Sent to Conduit")
+            let value = result["value"] as? String ?? appLocalized("appIntent.sentToConduit", "Sent to LongAgent")
             return .result(value: value)
         }
 
@@ -2162,16 +2162,16 @@ struct ConduitSendTextIntent: AppIntent {
 
 @available(iOS 16.0, *)
 struct ConduitSendUrlIntent: AppIntent {
-    static var title: LocalizedStringResource = "Send Link to Conduit"
+    static var title: LocalizedStringResource = "Send Link to LongAgent"
     static var description = IntentDescription(
-        "Send a URL into Conduit for summary or analysis."
+        "Send a URL into LongAgent for summary or analysis."
     )
     static var isDiscoverable = true
     static var openAppWhenRun = true
 
     @Parameter(
         title: "URL",
-        requestValueDialog: IntentDialog("Which link should Conduit analyze?")
+        requestValueDialog: IntentDialog("Which link should LongAgent analyze?")
     )
     var url: URL
 
@@ -2189,7 +2189,7 @@ struct ConduitSendUrlIntent: AppIntent {
         )
 
         if let success = result["success"] as? Bool, success {
-            let value = result["value"] as? String ?? appLocalized("appIntent.sentLinkToConduit", "Sent link to Conduit")
+            let value = result["value"] as? String ?? appLocalized("appIntent.sentLinkToConduit", "Sent link to LongAgent")
             return .result(value: value)
         }
 
@@ -2200,16 +2200,16 @@ struct ConduitSendUrlIntent: AppIntent {
 
 @available(iOS 16.0, *)
 struct ConduitSendImageIntent: AppIntent {
-    static var title: LocalizedStringResource = "Send Image to Conduit"
+    static var title: LocalizedStringResource = "Send Image to LongAgent"
     static var description = IntentDescription(
-        "Send an image into Conduit for analysis."
+        "Send an image into LongAgent for analysis."
     )
     static var isDiscoverable = true
     static var openAppWhenRun = true
 
     @Parameter(
         title: "Image",
-        requestValueDialog: IntentDialog("Choose an image for Conduit.")
+        requestValueDialog: IntentDialog("Choose an image for LongAgent.")
     )
     var image: IntentFile
 
@@ -2269,7 +2269,7 @@ struct ConduitSendImageIntent: AppIntent {
             // is reclaimed by this defer.
             dartMayOwnStagedImage =
                 result[appIntentNativeOwnedFilePathKey] as? String == filePath
-            let value = result["value"] as? String ?? appLocalized("appIntent.sentImageToConduit", "Sent image to Conduit")
+            let value = result["value"] as? String ?? appLocalized("appIntent.sentImageToConduit", "Sent image to LongAgent")
             return .result(value: value)
         }
 

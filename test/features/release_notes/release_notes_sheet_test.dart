@@ -20,10 +20,9 @@ void main() {
   setUpAll(loadTestFonts);
 
   testWidgets(
-    'flutter release notes sheet uses editorial review and support sections',
+    'flutter release notes sheet uses editorial review section',
     (tester) async {
       var reviewCalls = 0;
-      var supportCalls = 0;
       var closeCalls = 0;
 
       await tester.pumpWidget(
@@ -44,9 +43,6 @@ void main() {
                   ),
                 ],
                 onReview: () => reviewCalls += 1,
-                onOpenSupport: () => supportCalls += 1,
-                supportLabel: 'Buy Me a Coffee',
-                supportIcon: Icons.local_cafe_outlined,
                 onClose: () => closeCalls += 1,
               ),
             ),
@@ -62,20 +58,19 @@ void main() {
         AppTypography.headlineMedium,
       );
       expect(find.text("What's new in 3.3"), findsNothing);
-      expect(find.text('Enjoying Conduit?'), findsOneWidget);
+      expect(find.text('Enjoying LongAgent?'), findsOneWidget);
       expect(
         find.text(
-          'A short review helps more people find Conduit. A small tip helps me keep building it. Either one means a lot.',
+          'A short review helps more people find LongAgent. It only takes a moment and means a lot.',
         ),
         findsOneWidget,
       );
-      expect(find.text('Review Conduit'), findsOneWidget);
-      expect(find.text('Buy Me a Coffee'), findsOneWidget);
+      expect(find.text('Review LongAgent'), findsOneWidget);
       expect(
         tester
             .widget<Text>(
               find.text(
-                'A short review helps more people find Conduit. A small tip helps me keep building it. Either one means a lot.',
+                'A short review helps more people find LongAgent. It only takes a moment and means a lot.',
               ),
             )
             .style
@@ -83,7 +78,7 @@ void main() {
         AppTypography.bodyMedium,
       );
       expect(
-        tester.widget<Text>(find.text('Review Conduit')).style?.fontSize,
+        tester.widget<Text>(find.text('Review LongAgent')).style?.fontSize,
         AppTypography.bodyMedium,
       );
       expect(find.text('Since 3.3.1, now on 3.3.2'), findsNothing);
@@ -110,19 +105,12 @@ void main() {
       expect(find.text('Baked changelog'), findsOneWidget);
       expect(find.text('Localized copy'), findsOneWidget);
 
-      expect(find.text('Review Conduit').hitTestable(), findsOneWidget);
-      expect(find.text('Buy Me a Coffee').hitTestable(), findsOneWidget);
-      await tester.tap(find.text('Review Conduit'));
+      expect(find.text('Review LongAgent').hitTestable(), findsOneWidget);
+      await tester.tap(find.text('Review LongAgent'));
       await tester.pump();
       expect(reviewCalls, 1);
-      expect(supportCalls, 0);
       expect(closeCalls, 0);
 
-      await tester.tap(find.text('Buy Me a Coffee'));
-      await tester.pump();
-      expect(reviewCalls, 1);
-      expect(supportCalls, 1);
-      expect(closeCalls, 0);
       expect(find.text('Done'), findsOneWidget);
     },
   );
@@ -194,8 +182,7 @@ void main() {
         find.byKey(const ValueKey('release-notes-summary-scroll')),
         findsOneWidget,
       );
-      expect(find.text('Review Conduit').hitTestable(), findsOneWidget);
-      expect(find.text('Buy Me a Coffee').hitTestable(), findsOneWidget);
+      expect(find.text('Review LongAgent').hitTestable(), findsOneWidget);
       expect(find.text('Done').hitTestable(), findsOneWidget);
     },
   );
@@ -223,7 +210,7 @@ void main() {
 
     final firstFeature = find.text('Feature 0.0');
     final featureBefore = tester.getTopLeft(firstFeature).dy;
-    final reviewBefore = tester.getTopLeft(find.text('Review Conduit')).dy;
+    final reviewBefore = tester.getTopLeft(find.text('Review LongAgent')).dy;
     await tester.drag(
       find.byKey(const ValueKey('release-notes-summary-scroll')),
       const Offset(0, -240),
@@ -232,10 +219,9 @@ void main() {
 
     expect(tester.getTopLeft(firstFeature).dy, lessThan(featureBefore));
     expect(tester.takeException(), isNull);
-    expect(find.text('Review Conduit').hitTestable(), findsOneWidget);
-    expect(find.text('Buy Me a Coffee').hitTestable(), findsOneWidget);
+    expect(find.text('Review LongAgent').hitTestable(), findsOneWidget);
     expect(find.text('Done').hitTestable(), findsOneWidget);
-    expect(tester.getTopLeft(find.text('Review Conduit')).dy, reviewBefore);
+    expect(tester.getTopLeft(find.text('Review LongAgent')).dy, reviewBefore);
   });
 
   testWidgets('matches the iOS compact composer bottom inset', (tester) async {
@@ -274,8 +260,7 @@ void main() {
       find.byKey(const ValueKey('release-notes-summary-scroll')),
       findsOneWidget,
     );
-    expect(find.text('Review Conduit').hitTestable(), findsOneWidget);
-    expect(find.text('Buy Me a Coffee').hitTestable(), findsOneWidget);
+    expect(find.text('Review LongAgent').hitTestable(), findsOneWidget);
     expect(
       tester.getSize(find.byType(ReleaseNotesSheet)).height,
       lessThanOrEqualTo(568 * 0.84),
@@ -294,9 +279,8 @@ void main() {
 
     expect(tester.takeException(), isNull);
     expect(find.text('Done'), findsOneWidget);
-    expect(find.text('Enjoying Conduit?'), findsOneWidget);
-    expect(find.text('Review Conduit').hitTestable(), findsOneWidget);
-    expect(find.text('Buy Me a Coffee').hitTestable(), findsOneWidget);
+    expect(find.text('Enjoying LongAgent?'), findsOneWidget);
+    expect(find.text('Review LongAgent').hitTestable(), findsOneWidget);
   });
 
   testWidgets('keeps the release hierarchy intact in RTL', (tester) async {
@@ -310,8 +294,8 @@ void main() {
     expect(find.text("What's new"), findsOneWidget);
     expect(find.text('Local models'), findsOneWidget);
     expect(find.text('Polished details'), findsOneWidget);
-    await tester.ensureVisible(find.text('Review Conduit'));
-    await tester.tap(find.text('Review Conduit'));
+    await tester.ensureVisible(find.text('Review LongAgent'));
+    await tester.tap(find.text('Review LongAgent'));
     await tester.pump();
     expect(tester.takeException(), isNull);
   });
@@ -335,8 +319,8 @@ void main() {
       disableAnimations: true,
     );
     await tester.pump();
-    expect(find.text('喜欢 Conduit 吗？'), findsOneWidget);
-    expect(find.textContaining('无论哪一种，对我都意义重大。'), findsOneWidget);
+    expect(find.text('喜欢 LongAgent 吗？'), findsOneWidget);
+    expect(find.textContaining('只需片刻，却对我意义重大。'), findsOneWidget);
 
     await _pumpReleaseNotesSheet(
       tester,
@@ -344,8 +328,8 @@ void main() {
       disableAnimations: true,
     );
     await tester.pump();
-    expect(find.text('喜歡 Conduit 嗎？'), findsOneWidget);
-    expect(find.textContaining('無論哪一種，對我都意義重大。'), findsOneWidget);
+    expect(find.text('喜歡 LongAgent 嗎？'), findsOneWidget);
+    expect(find.textContaining('只需片刻，卻對我意義重大。'), findsOneWidget);
   });
 }
 
@@ -400,9 +384,6 @@ Future<void> _pumpReleaseNotesSheet(
                           ),
                         ],
                     onReview: _noop,
-                    onOpenSupport: _noop,
-                    supportLabel: 'Buy Me a Coffee',
-                    supportIcon: Icons.local_cafe_outlined,
                     onClose: _noop,
                   ),
                 ),
